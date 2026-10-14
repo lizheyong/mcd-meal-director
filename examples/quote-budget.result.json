@@ -1,0 +1,61 @@
+{
+  "observedAt": "2026-10-14T13:23:10.885Z",
+  "server": "https://mcp.mcd.cn",
+  "tool": "calculate-price",
+  "redaction": "Removed request trace ID and duplicate text envelope; retained business response fields.",
+  "response": {
+    "success": true,
+    "code": 200,
+    "message": "请求成功",
+    "datetime": "2026-10-14 21:23:10",
+    "data": {
+      "productOriginalPrice": 6560,
+      "productPrice": 6560,
+      "originalPrice": 6560,
+      "discount": 0,
+      "price": 6560,
+      "productList": [
+        {
+          "productCode": "9900013304",
+          "productName": "人气经典随心配",
+          "quantity": 1,
+          "originalSubtotal": 1490,
+          "subtotal": 1490
+        },
+        {
+          "productCode": "9900013304",
+          "productName": "人气经典随心配",
+          "quantity": 1,
+          "originalSubtotal": 1390,
+          "subtotal": 1390
+        },
+        {
+          "productCode": "9900015602",
+          "productName": "大堡口福三件套",
+          "quantity": 1,
+          "originalSubtotal": 2290,
+          "subtotal": 2290
+        },
+        {
+          "productCode": "9900015568",
+          "productName": "精选超值随心配",
+          "quantity": 1,
+          "originalSubtotal": 1390,
+          "subtotal": 1390
+        }
+      ],
+      "takeWayList": [
+        {
+          "code": "eat-in",
+          "title": "堂食",
+          "subtitle": "店内用餐"
+        },
+        {
+          "code": "locker-in",
+          "title": "外带",
+          "subtitle": "店内取餐柜"
+        }
+      ]
+    }
+  }
+}

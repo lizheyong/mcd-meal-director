@@ -3,90 +3,61 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="麦麦拼单导演：把每个人的需求变成一张真实核价的餐单。查看基于麦当劳官方 MCP 的四人配餐与临时改餐演示。">
-  <meta name="theme-color" content="#183c32">
-  <title>麦麦拼单导演 · 四个人，一张餐单</title>
-  <style>
-    :root{--ink:#19382f;--muted:#65756a;--paper:#f7f4eb;--yellow:#ffd769;--line:#dfe5da;--green:#244f40;--white:#fffef9;--orange:#a44121}
-    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.55}
-    a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #b87116;outline-offset:5px}
-    .shell{max-width:1180px;margin:auto;padding:0 32px}.top{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:20px}
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:750;font-size:18px}.mark{display:grid;place-items:center;width:36px;height:36px;background:var(--ink);color:var(--yellow);border-radius:12px;font-size:20px;font-weight:800}.toplinks{display:flex;gap:24px;font-size:14px}.toplinks a{text-decoration:none}.toplinks a:hover{text-decoration:underline}
-    .hero{display:grid;grid-template-columns:1fr 280px;gap:40px;align-items:center;padding:56px 0 40px}.eyebrow{font-size:11px;letter-spacing:2px;font-weight:750;color:var(--muted);margin-bottom:16px}.hero h1{font-size:clamp(36px,4.6vw,57px);letter-spacing:-2px;line-height:1.22;margin:0 0 20px;font-weight:800}.hero h1 span{background:linear-gradient(transparent 58%,var(--yellow) 58%,var(--yellow) 94%,transparent 94%)}.hero p{margin:0;color:var(--muted);font-size:16px;max-width:620px}
-    .hero-note{border:1px solid var(--line);background:#fffdf4;padding:22px 24px;border-radius:20px;transform:rotate(2deg)}.hero-note b{font-size:31px;line-height:1.2;display:block;letter-spacing:-1px}.hero-note p{font-size:13px;margin:8px 0 18px}.note-bottom{display:flex;justify-content:space-between;padding-top:14px;border-top:1px dashed #cbd5c8;font-size:12px}.dot{width:7px;height:7px;display:inline-block;border-radius:100%;background:#468b61;margin-right:6px}
-    .replay{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px 0;margin-bottom:20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.replay-label{font-weight:700;font-size:14px}.replay-label small{display:block;color:var(--muted);font-weight:400;margin-top:4px;font-size:12px}.switch{display:flex;padding:4px;border:1px solid #dce0d5;border-radius:14px;background:#eeeede;gap:4px}.switch button{border:0;padding:11px 18px;border-radius:10px;background:none;color:var(--muted);font-size:13px;font-weight:650;white-space:nowrap}.switch button[aria-pressed=true]{background:var(--ink);color:white;box-shadow:0 2px 5px #19382f18}
-    .workspace{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:start}.stage{min-width:0}.brief{background:#e9eee1;border-radius:16px;padding:18px 22px;font-size:14px;margin-bottom:22px;min-height:84px;display:flex;align-items:center;gap:14px}.quote-mark{font:38px Georgia,serif;color:#81977e;line-height:1}.brief p{margin:0}.brief strong{font-weight:700}
-    .section-line{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.section-line h2{font-size:17px;margin:0;letter-spacing:-.4px}.section-line span{font-size:12px;color:var(--muted)}.people{display:grid;grid-template-columns:1fr 1fr;gap:14px}.person{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:20px;min-width:0;transition:background .2s,border .2s}.person.changed{background:#fff7df;border-color:#dfb651}.person-top{display:flex;align-items:center;gap:10px;margin-bottom:20px}.avatar{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#e8eee0;font-size:14px;font-weight:700}.person:nth-child(2) .avatar{background:#f5dfaf}.person:nth-child(3) .avatar{background:#e3e4ef}.person:nth-child(4) .avatar{background:#f1e1d8}.person-name{font-size:15px;font-weight:750}.pref{font-size:11px;color:var(--muted)}.allocation{margin-left:auto;font-size:20px;font-weight:750;letter-spacing:-.7px;font-variant-numeric:tabular-nums}.allocation small{font-size:12px;font-weight:400;margin-right:3px}.food{font-weight:700;font-size:16px;margin-bottom:5px}.drink{color:var(--muted);font-size:13px}.share-note{margin-top:18px;padding-top:12px;border-top:1px dashed #dce2d5;font-size:12px;color:var(--muted)}.change-note{color:var(--orange);font-size:11px;font-weight:650;margin-top:6px;min-height:17px}.shared{display:flex;align-items:center;gap:14px;border:1px solid #d9dfd0;background:#f0f1e5;border-radius:16px;margin:15px 0 24px;padding:17px 20px}.shared-symbol{font-size:28px;line-height:1}.shared strong{font-size:14px}.shared p{font-size:12px;color:var(--muted);margin:3px 0 0}
-    .bill{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:26px;position:sticky;top:22px}.bill-label{color:var(--muted);font-size:12px}.total{font-size:54px;font-weight:800;letter-spacing:-2px;line-height:1.3;font-variant-numeric:tabular-nums;margin:7px 0}.total .currency{font-size:25px;margin-right:3px;font-weight:500}.change-chip{display:inline-block;font-size:11px;font-weight:650;border-radius:6px;background:#edf1e5;padding:4px 8px;margin-bottom:22px}.budget-label{display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px}.track{background:#e9eddf;height:6px;border-radius:10px;overflow:hidden}.track div{background:var(--ink);height:100%;width:83.5833%;transition:width .25s}.remaining{font-size:12px;color:var(--muted);margin:9px 0 23px}.bill hr{border:0;border-top:1px dashed #d3dccd;margin:20px 0}.bill-row{display:flex;gap:10px;justify-content:space-between;font-size:12px;margin:12px 0}.bill-row .amount{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:650}.bill-explain{font-size:12px;color:var(--muted);margin:0}.verified{font-size:11px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted)}.evidence{display:block;font-size:12px;font-weight:650;margin-top:12px;text-decoration:none}.evidence:hover{text-decoration:underline}
-    .source{background:transparent;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:0 0 24px;font-size:12px;color:var(--muted)}.source summary{cursor:pointer;color:var(--ink);font-weight:650}.source p{margin:10px 0 0}.source a{font-weight:600}.source .steps{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}.steps span{background:#e8eddf;color:#3b5b45;border-radius:5px;padding:4px 7px;font-family:ui-monospace,monospace;font-size:10px}
-    .cta{display:flex;justify-content:space-between;align-items:center;gap:28px;border-top:1px solid var(--line);padding:35px 0;margin-top:30px}.cta h2{font-size:23px;margin:0 0 7px;letter-spacing:-.8px}.cta p{font-size:13px;color:var(--muted);margin:0}.cta a{display:inline-block;border-radius:10px;padding:13px 20px;background:var(--yellow);font-size:14px;font-weight:750;text-decoration:none;white-space:nowrap}.footer{font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding:20px 0 30px;display:flex;justify-content:space-between;gap:20px}
-    @media(max-width:960px){.workspace{grid-template-columns:minmax(0,1fr) 285px;gap:18px}.shell{padding:0 24px}.bill{padding:20px}.person{padding:16px}.hero{grid-template-columns:1fr 230px;gap:24px}.hero-note{padding:20px}.allocation{font-size:18px}}
-    @media(max-width:760px){.workspace{grid-template-columns:1fr}.bill{position:static}.hero{grid-template-columns:1fr;padding:36px 0 28px}.hero-note{display:none}.replay{align-items:flex-start;flex-direction:column}.switch{width:100%}.switch button{flex:1;padding:11px 8px}.top{height:72px}.toplinks{gap:14px;font-size:12px}.hero h1{font-size:42px}.cta{align-items:flex-start;flex-direction:column;gap:18px}.footer{flex-direction:column;gap:6px}.bill-row{font-size:14px}}
-    @media(max-width:420px){.shell{padding:0 16px}.brand{font-size:15px;gap:8px}.mark{width:30px;height:30px;border-radius:10px}.toplinks a:first-child{display:none}.hero h1{font-size:36px}.hero p{font-size:14px}.people{gap:10px}.person{padding:13px}.person-top{gap:7px;flex-wrap:wrap;margin-bottom:14px}.avatar{width:29px;height:29px}.allocation{margin-left:0;width:100%;font-size:22px;padding-top:4px}.food{font-size:14px}.drink{font-size:12px}.section-line span{font-size:10px}.brief{padding:16px;font-size:13px}.shared{padding:15px}}
-    @media(prefers-reduced-motion:reduce){*{transition:none!important}}
-  </style>
+  <meta name="description" content="账算明白，拼单不烧心。麦麦拼单导演用官方 MCP 核价，让每个人知道吃什么、付多少。比较餐单、试试换堡、生成群分享卡。">
+  <meta name="theme-color" content="#f7f4eb">
+  <title>麦麦拼单导演 · 账算明白，拼单不烧心</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <a href="#meal-table" class="skip">跳到餐单</a>
   <div class="shell">
     <header class="top">
-      <a class="brand" href="./" aria-label="麦麦拼单导演首页"><span class="mark" aria-hidden="true">四</span>麦麦拼单导演</a>
-      <nav class="toplinks" aria-label="项目导航"><a href="#about-demo">关于演示</a><a href="https://github.com/lizheyong/mcd-meal-director">GitHub ↗</a></nav>
+      <a class="brand" href="./" aria-label="麦麦拼单导演首页"><span class="brand-mark" aria-hidden="true">拼</span><span>麦麦拼单导演<small>MEAL DIRECTOR</small></span></a>
+      <nav aria-label="项目导航"><a href="#composer">安排我的一餐</a><a href="https://github.com/lizheyong/mcd-meal-director">GitHub ↗</a></nav>
     </header>
     <main>
-      <section class="hero">
-        <div><div class="eyebrow">MEAL DIRECTOR / 人人有份，刚刚好</div><h1>四个人。<br>一张<span>刚刚好的餐单。</span></h1><p>把每个人想吃的拼在一起。查真实菜单，核算整单价格，<br>有人临时改主意，也能把这一顿安排明白。</p></div>
-        <aside class="hero-note" aria-label="案例概览"><b>4 人 / ¥120</b><p>一份共享餐单<br>四种不同的想法</p><div class="note-bottom"><span><i class="dot"></i>真实 MCP 核价</span><span>2026.10.14</span></div></aside>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span> 今日小剧场 · 四个人的点餐局</div><h1 id="hero-title">这顿拼单，<br><span>不烧心。</span><i aria-hidden="true">✳</i></h1><p>有人不吃辣，有人要无糖，有人临时想换堡。<br>谁吃什么、各付多少，导演替你安排明白。</p><a href="#meal-table" class="primary hero-action">看看这顿怎么拼 <span aria-hidden="true">↘</span></a><p class="hero-caption">一句话提需求 · 官方接口核价 · 餐单直接发群</p></div>
+        <div class="hero-art" aria-label="拼单小剧场插画">
+          <div class="table-grid" aria-hidden="true"></div>
+          <div class="speech speech-one">小周：老板，我临时想换个堡。</div>
+          <div class="scene-ticket"><div class="ticket-top"><span>DIRECTOR’S NOTE</span><b>01</b></div><div class="burger" aria-hidden="true"><div class="bun"><i></i><i></i><i></i></div><div class="lettuce"></div><div class="cheese"></div><div class="patty"></div><div class="bun-bottom"></div></div><strong>餐可以改，<br>账得重新算。</strong><div class="ticket-bottom"><span>4 位饭搭子</span><span>每一份都有着落</span></div></div>
+          <div class="speech speech-two">导演：加一块，谁换谁付。</div><div class="stamp" aria-hidden="true">账本<br>明白</div>
+        </div>
       </section>
-      <section class="replay" aria-label="演示场景切换">
-        <div class="replay-label">一场临时改餐，看看它怎么安排<small>真实调用回放 · 点击切换两次核价结果</small></div>
-        <div class="switch"><button id="before" type="button" aria-pressed="true">① 初始配餐</button><button id="after" type="button" aria-pressed="false">② 小周换成麦香鱼</button></div>
+      <div class="rule-line"><span>先把规矩立住</span><p>餐品有归属 <i>／</i> 花钱有依据 <i>／</i> 改餐有交代</p><a href="#meme-note">这个梗，我懂 ↗</a></div>
+      <section id="meal-table" aria-labelledby="table-title">
+        <div class="section-head"><div><div class="eyebrow">01 / 选一桌</div><h2 id="table-title">一桌饭，两种安排。</h2></div><div class="snapshot-label">官方核价回放 · 2026.10.14<small>上海徐家汇餐厅 · 到店取餐</small></div></div>
+        <p class="scene-brief">小林不吃辣，小周要无糖，小陈想吃鸡肉，小许想分小食。<strong>4 人，预算 ¥120。</strong></p>
+        <div class="plan-options" aria-label="选择演示配餐方案">
+          <button type="button" class="plan-option" id="choose-shared" aria-pressed="true"><span class="option-top"><span class="option-name"><i class="radio-dot"></i>共享多一点</span><span class="option-price">¥<b id="shared-price">100.30</b></span></span><span class="option-desc">4 堡 4 饮 · 麦乐鸡 10 块 + 中薯</span><span class="option-trade">保留巨无霸和板烧，大家一起分小食。</span></button>
+          <button type="button" class="plan-option" id="choose-budget" aria-pressed="false"><span class="option-top"><span class="option-name"><i class="radio-dot"></i>小食少一点</span><span class="option-price">¥<b id="budget-price">65.60</b></span></span><span class="option-desc">4 堡 4 饮 · 共享中薯 1 份</span><span class="option-trade">少 ¥34.70：少 10 块麦乐鸡，换 2 个堡。</span></button>
+        </div>
+        <p class="compare-note">比较的是这两份餐单；每一份都单独核过价。换堡状态会跟随切换。</p>
+        <div class="workspace">
+          <section class="table-stage" aria-label="分人餐单">
+            <div class="section-line"><h3>每个人，拿这一份</h3><span>每人 1 堡 + 1 饮 · 按约定分摊</span></div>
+            <div class="people" id="people"></div>
+            <div class="shared-food"><div class="fries-icon" aria-hidden="true"><i></i><i></i><i></i><b>↔</b></div><div><strong>放中间，一起吃。</strong><p id="shared-food"></p><small>已包含在套餐里，采购计一次。</small></div></div>
+            <section class="change-scene" aria-label="临时改餐演示"><div class="scene-number">加映</div><div class="scene-dialogue"><p>小周：“我想换麦香鱼，无糖可乐保留。”</p><span id="change-caption">这就看看，临时改餐会动到谁的账。</span></div><button type="button" id="change-meal" aria-pressed="false">试试换堡 <span>+¥1.00</span></button></section>
+            <div class="change-ledger" id="change-ledger" hidden><span>小周 <b id="zhou-delta"></b></span><span>整单 <b id="total-delta"></b></span><p>无糖可乐照旧；另外三人的餐品与分摊保留。</p></div>
+            <p class="tradeoff" id="tradeoff"></p>
+          </section>
+          <aside class="bill" aria-labelledby="bill-title">
+            <div class="bill-top"><span>MEAL RECEIPT</span><span>4 PERSONS</span></div><h3 id="bill-title">这顿饭，账在这里。</h3><div class="total"><small>¥</small><strong id="total">100.30</strong><span>整单金额</span></div><div class="budget-line"><span>预算 ¥120.00</span><span>还余 <b id="remaining">¥19.70</b></span></div><div class="budget-track" role="progressbar" aria-label="预算使用金额" aria-valuemin="0" aria-valuemax="120" aria-valuenow="100.3" id="budget-track"><div id="budget-fill"></div></div>
+            <div class="tear-line"></div><p class="bill-label">向门店买这些</p><div id="shopping-list"></div><p class="bill-rule" id="split-rule"></p><p class="split-sum" id="split-sum" aria-label="分摊合计核对"></p><div class="tear-line"></div><div class="quote-proof"><span class="live-dot"></span><div>官方接口核价快照<small id="quote-time"></small></div><a id="response-link" href="https://github.com/lizheyong/mcd-meal-director/blob/main/examples/quote-before.result.json" aria-label="查看当前官方核价响应">查账 ↗</a></div><button type="button" id="open-share" class="primary">生成群餐单 <span aria-hidden="true">↗</span></button><p class="bill-footnote">演示人物 · 历史报价 · 未下单</p>
+          </aside>
+        </div>
+        <details class="source-note" id="about-demo"><summary>价格和餐单，有据可查。</summary><div><p>2026 年 10 月 14 日，使用麦当劳官方 MCP 查询上海徐家汇餐厅（天钥桥路 1 号）的到店菜单。四名成员与需求是演示案例；套餐选项和四份整单报价来自真实调用。</p><p>页面回放保存的结果。分摊是演示中约定的 AA 方案，个人换堡自付差价；不是官方商品单价。餐品供应和价格以实际下单时的官方结果为准。</p><a href="https://github.com/lizheyong/mcd-meal-director/blob/main/examples/live-run.md">查看请求参数、响应与完整过程 ↗</a></div></details>
       </section>
-      <div class="workspace">
-        <section class="stage" aria-label="四人配餐清单">
-          <div class="brief"><span class="quote-mark" aria-hidden="true">“</span><p id="brief">小林不吃辣，小周不要含糖饮料，小陈想吃鸡肉。<br><strong>四个人吃饱，再一起分享小食。基础餐费 AA，升级自己付。</strong></p></div>
-          <div class="section-line"><h2>每个人，拿这一份</h2><span>每人 1 堡 + 1 饮 · 共享小食</span></div>
-          <div class="people" aria-live="polite">
-            <article class="person"><div class="person-top"><span class="avatar">林</span><div><div class="person-name">小林</div><div class="pref">不吃辣</div></div><div class="allocation"><small>¥</small>25.08</div></div><div class="food">巨无霸</div><div class="drink">可乐中杯</div><div class="change-note">&nbsp;</div><div class="share-note">麦乐鸡 3 块 + 共享中薯条</div></article>
-            <article class="person" id="zhou-card"><div class="person-top"><span class="avatar">周</span><div><div class="person-name">小周</div><div class="pref">不要含糖饮料</div></div><div class="allocation"><small>¥</small><span id="zhou-share">25.08</span></div></div><div class="food" id="zhou-food">高达吉士双牛堡</div><div class="drink">无糖可口可乐中杯</div><div class="change-note" id="zhou-change">&nbsp;</div><div class="share-note">麦乐鸡 2 块 + 共享中薯条</div></article>
-            <article class="person"><div class="person-top"><span class="avatar">陈</span><div><div class="person-name">小陈</div><div class="pref">想吃鸡肉</div></div><div class="allocation"><small>¥</small>25.07</div></div><div class="food">板烧鸡腿堡</div><div class="drink">可乐中杯</div><div class="change-note">&nbsp;</div><div class="share-note">麦乐鸡 3 块 + 共享中薯条</div></article>
-            <article class="person"><div class="person-top"><span class="avatar">许</span><div><div class="person-name">小许</div><div class="pref">一起分享小食</div></div><div class="allocation"><small>¥</small>25.07</div></div><div class="food">麦香鸡</div><div class="drink">可乐中杯</div><div class="change-note">&nbsp;</div><div class="share-note">麦乐鸡 2 块 + 共享中薯条</div></article>
-          </div>
-          <div class="shared"><span class="shared-symbol" aria-hidden="true">↔</span><div><strong>放在中间，大家一起吃</strong><p>麦乐鸡 10 块 + 中薯条 1 份 · 已包含在共享套餐中</p></div></div>
-          <details class="source" id="about-demo"><summary>这次演示的数据从哪里来？</summary><p>2026 年 10 月 14 日，查询麦当劳上海徐家汇餐厅（天钥桥路 1 号）的到店菜单。四名成员和需求为演示案例，套餐选项与两次价格来自官方 MCP 的真实调用。</p><p>这个页面回放已保存的结果，不接收凭证或创建订单。价格与供应以你实际下单时的官方结果为准。</p><div class="steps"><span>query-nearby-stores</span><span>query-meals</span><span>query-meal-detail</span><span>calculate-price × 2</span></div><p><a href="https://github.com/lizheyong/mcd-meal-director/blob/main/examples/live-run.md">查看完整调用过程与复现参数 ↗</a></p></details>
-        </section>
-        <aside class="bill" aria-label="官方核价与分摊" aria-live="polite">
-          <div class="bill-label">这顿饭，整单应付</div><div class="total"><span class="currency">¥</span><span id="total">100.30</span></div><div class="change-chip" id="change-chip">四人餐单 · 在预算内</div>
-          <div class="budget-label"><span>预算使用</span><strong>¥120.00</strong></div><div class="track" role="progressbar" aria-label="预算使用比例" aria-valuemin="0" aria-valuemax="120" aria-valuenow="100.3" id="budget-track"><div id="budget-fill"></div></div><div class="remaining">还余 <strong id="remaining">¥19.70</strong></div>
-          <hr><div class="bill-label">实际购买 · 三条套餐明细</div><div class="bill-row"><span>堡堡随心拼 · 7 件 × 1</span><span class="amount">¥72.50</span></div><div class="bill-row"><span>人气经典随心配 × 1</span><span class="amount" id="zhou-package">¥13.90</span></div><div class="bill-row"><span>精选超值随心配 × 1</span><span class="amount">¥13.90</span></div><hr>
-          <p class="bill-explain" id="split-rule">按四人约定，基础餐费 AA。小林与小周各承担一分舍入尾差；四人分摊合计等于整单金额。</p><div class="verified"><i class="dot"></i>官方核价 · <span id="quote-time">2026-10-14 17:24:23</span><br>上海徐家汇餐厅 · 到店取餐</div><a id="response-link" class="evidence" href="https://github.com/lizheyong/mcd-meal-director/blob/main/examples/quote-before.result.json">查看这次接口响应 ↗</a>
-        </aside>
-      </div>
-      <section class="cta"><div><h2>下一顿，让 AI 来安排。</h2><p>将 Skill 与麦当劳 MCP 接入你的 AI 客户端，用自己的话描述这顿饭。</p></div><a href="https://github.com/lizheyong/mcd-meal-director#快速开始codex-cli">获取 Skill 与安装说明 ↗</a></section>
+      <section class="composer" id="composer" aria-labelledby="composer-title"><div class="composer-intro"><div class="eyebrow">02 / 轮到你来开场</div><h2 id="composer-title">你的饭搭子，<br>有什么想法？</h2><p>用自己的话说，不用逐项勾选。<br>把需求交给已接入 Skill 与麦当劳 MCP 的 AI 客户端，让它查询、配餐、核价。</p><a href="https://github.com/lizheyong/mcd-meal-director#快速开始codex-cli">安装 Skill 与连接说明 ↗</a></div><div class="composer-paper"><label for="meal-request">这一餐，听你说</label><textarea id="meal-request" aria-describedby="request-help" rows="5" placeholder="比如：我们五个人在杭州，一位不吃牛肉，预算 150 元，想分享小食……">我们四个人在上海徐家汇到店取餐，预算 120 元。小林不吃辣，小周要无糖饮料，小陈想吃鸡肉，小许想分享小食。基础餐费大家同意 AA，临时加价自己付。</textarea><div class="composer-actions"><small id="request-help" role="status">本页整理任务文本，复制后到 AI 客户端运行。</small><button type="button" class="primary" id="prepare-task">整理这段需求 ↗</button></div><div id="task-output" hidden><label for="task-text">复制到你的 AI 客户端</label><textarea readonly id="task-text" rows="8"></textarea><button type="button" id="copy-task" class="secondary">复制任务</button><span class="inline-status" id="task-status" role="status"></span></div></div></section>
+      <aside class="meme-note" id="meme-note"><span class="meme-tag">懂梗的，请入座。</span><h2>“先把规矩立住。”</h2><p>借红果 AI 短剧里“不烧心”的梗，给这顿拼单立个小规矩：<br><strong>一份餐归谁，一块钱花哪，都说清楚。</strong></p><small>这里的“不烧心”说的是拼单省心。<a href="https://www.36kr.com/p/4016896338120585">看看这个梗的来由 ↗</a></small></aside>
     </main>
-    <footer class="footer"><span>麦麦拼单导演 · 独立开发的参赛作品，非麦当劳官方产品。</span><span>Built with McDonald’s China MCP · 2026</span></footer>
+    <footer><span>麦麦拼单导演 · 独立参赛作品，非麦当劳官方产品。</span><div><a href="https://github.com/lizheyong/mcd-meal-director/blob/main/DESIGN_NOTES.md">设计参考</a><a href="https://github.com/M-China/mcd-developer-innovation-challenge/issues/689">已成功参赛 ↗</a></div></footer>
   </div>
-  <script>
-    const byId = id => document.getElementById(id);
-    function showRevision(changed) {
-      byId('before').setAttribute('aria-pressed', String(!changed));
-      byId('after').setAttribute('aria-pressed', String(changed));
-      byId('zhou-card').classList.toggle('changed', changed);
-      byId('zhou-food').textContent = changed ? '麦香鱼' : '高达吉士双牛堡';
-      byId('zhou-share').textContent = changed ? '26.08' : '25.08';
-      byId('zhou-change').textContent = changed ? '换了汉堡，饮料和共享份数保留' : '\u00a0';
-      byId('total').textContent = changed ? '101.30' : '100.30';
-      byId('remaining').textContent = changed ? '¥18.70' : '¥19.70';
-      byId('zhou-package').textContent = changed ? '¥14.90' : '¥13.90';
-      byId('change-chip').textContent = changed ? '整单 +¥1.00 · 由改餐者承担' : '四人餐单 · 在预算内';
-      byId('quote-time').textContent = changed ? '2026-10-14 17:24:38' : '2026-10-14 17:24:23';
-      byId('budget-track').setAttribute('aria-valuenow', changed ? '101.3' : '100.3');
-      byId('budget-fill').style.width = `${(changed ? 101.3 : 100.3) / 120 * 100}%`;
-      byId('brief').textContent = changed ? '小周：“我想换成麦香鱼，无糖可乐保留，其他人的先别动。加价我自己付。”' : '小林不吃辣，小周不要含糖饮料，小陈想吃鸡肉。四个人吃饱，再一起分享小食。基础餐费 AA，升级自己付。';
-      byId('split-rule').textContent = changed ? '保留原来的基础餐费分摊。小周单独承担 1.00 元升级费，另外三人的餐品与分摊保持不变。' : '按四人约定，基础餐费 AA。小林与小周各承担一分舍入尾差；四人分摊合计等于整单金额。';
-      byId('response-link').href = `https://github.com/lizheyong/mcd-meal-director/blob/main/examples/quote-${changed ? 'after' : 'before'}.result.json`;
-    }
-    byId('before').addEventListener('click', () => showRevision(false));
-    byId('after').addEventListener('click', () => showRevision(true));
-  </script>
+  <dialog id="share-dialog" aria-labelledby="share-title"><div class="dialog-head"><div><span class="eyebrow">这一桌，大家都有数。</span><h2 id="share-title">群餐单已备好。</h2></div><button type="button" id="close-share" class="close" aria-label="关闭分享餐单">×</button></div><div class="share-layout"><img id="share-preview" alt="当前演示方案的四人餐单分享卡"><div class="share-copy"><label for="share-text">发群前，先看一眼</label><textarea readonly id="share-text" rows="13"></textarea><div class="share-actions"><button type="button" class="primary" id="copy-share">复制餐单</button><button type="button" class="secondary" id="download-share">保存图片</button></div><p id="share-status" role="status">复制或保存后，可自行转发到群里。</p></div></div></dialog>
+  <div class="sr-only" role="status" id="plan-status"></div>
+  <noscript><p class="shell">本页交互需要 JavaScript。<a href="https://github.com/lizheyong/mcd-meal-director/blob/main/examples/live-run.md">阅读完整餐单与真实核价记录</a>。</p></noscript>
+  <script type="module" src="./app.js"></script>
 </body>
 </html>

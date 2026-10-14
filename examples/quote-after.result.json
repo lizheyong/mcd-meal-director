@@ -1,5 +1,5 @@
 {
-  "observedAt": "2026-10-14T09:24:38.820Z",
+  "observedAt": "2026-10-14T13:23:10.196Z",
   "server": "https://mcp.mcd.cn",
   "tool": "calculate-price",
   "redaction": "Removed request trace ID and duplicate text envelope; retained business response fields.",
@@ -7,7 +7,7 @@
     "success": true,
     "code": 200,
     "message": "请求成功",
-    "datetime": "2026-10-14 17:24:38",
+    "datetime": "2026-10-14 21:23:10",
     "data": {
       "productOriginalPrice": 10130,
       "productPrice": 10130,

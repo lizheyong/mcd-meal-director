@@ -57,15 +57,25 @@ flowchart TD
 | `now-time-info` | 返回北京时间 2026-10-14 17:22:22 |
 | `query-nearby-stores` | 以公共关键词“上海 / 徐家汇”取得营业中的门店 |
 | `query-meals` | 取得所选门店当前菜单，按实际返回的商品编码选餐 |
-| `query-meal-detail` × 4 | 读取候选组合的轮次、可选餐品和差价，选用其中三种组合 |
-| `calculate-price`：初始清单 | 北京时间 17:24:23，官方返回 `price: 10030`，即 100.30 元 |
-| `calculate-price`：改餐清单 | 北京时间 17:24:38，官方返回 `price: 10130`，即 101.30 元 |
+| `query-meal-detail` × 4 | 读取候选组合的轮次、可选餐品和差价；预算版追加使用大堡口福三件套 |
+| `calculate-price`：初始清单 | 北京时间 21:23:09，官方返回 `price: 10030`，即 100.30 元 |
+| `calculate-price`：改餐清单 | 北京时间 21:23:10，官方返回 `price: 10130`，即 101.30 元 |
+| `calculate-price`：预算清单 | 北京时间 21:23:10，官方返回 `price: 6560`，即 65.60 元 |
+| `calculate-price`：预算版改餐 | 北京时间 21:24:51，官方返回 `price: 6660`，即 66.60 元 |
 
-这次只将小周的高达吉士双牛堡换成麦香鱼。套餐内的无糖可乐保留，另外两条购物明细完全相同，官方整单价格增加 1.00 元。按示例约定，这 1.00 元由改餐者承担；改餐前后分摊总和分别为 100.30 元与 101.30 元。
+首次联调在 17:22—17:24 完成，21:22 重新读取门店菜单与大堡口福三件套详情，随后取得上表四份核价响应。公开文件与网页使用这次更新的价格快照。
 
-公开复现材料：[完整案例](examples/live-run.md)、[初始请求](examples/quote-before.input.json)、[初始响应摘录](examples/quote-before.result.json)、[改餐请求](examples/quote-after.input.json)、[改餐响应摘录](examples/quote-after.result.json)、[套餐详情摘录](examples/meal-details.json)。响应摘录保留原始业务字段，移除了 trace ID 和重复的文本包装。
+共享版改餐只将小周的高达吉士双牛堡换成麦香鱼。套餐内的无糖可乐保留，另外两条购物明细完全相同，官方整单价格增加 1.00 元。按示例约定，这 1.00 元由改餐者承担；改餐前后分摊总和分别为 100.30 元与 101.30 元。
+
+预算版通过改变小林、小陈的汉堡并减少共享小食，将整单降到 65.60 元；同样的换鱼堡需求带入该方案后，整单 66.60 元。页面比较的是具体的四份已核价清单，分摊由案例中的 AA 约定产生。
+
+公开复现材料：[完整案例](examples/live-run.md)、[初始请求](examples/quote-before.input.json)、[初始响应摘录](examples/quote-before.result.json)、[改餐请求](examples/quote-after.input.json)、[改餐响应摘录](examples/quote-after.result.json)、[预算请求](examples/quote-budget.input.json)、[预算响应](examples/quote-budget.result.json)、[预算改餐请求](examples/quote-budget-after.input.json)、[预算改餐响应](examples/quote-budget-after.result.json)、[套餐详情摘录](examples/meal-details.json)。响应摘录保留原始业务字段，移除了 trace ID 和重复的文本包装。
 
 本次验证由开发过程中的模型按 Skill 流程通过官方 SDK 完成，覆盖公共门店查询、套餐选项、完整清单核价、单人改餐与分摊。外送、账户优惠券、营养查询及其他客户端安装尚未逐项实测；表中相应功能是流程支持范围。测试没有创建订单、领券或消费积分。
+
+## 网页与 Skill 的职责
+
+GitHub Pages 网页回放已保存的四份核价结果，用同一餐单状态生成分人视图、账单、群消息与 PNG 图片。网页不接收 Token、不发送用户输入、不创建订单。自由文本编辑器将用户原文与 Skill 执行要求组合成可复制任务；实时需求理解和 MCP 调用在用户自己的 AI 客户端进行。
 
 ## 凭证与公开材料
 

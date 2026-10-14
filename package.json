@@ -4,9 +4,12 @@
   "private": true,
   "type": "module",
   "description": "麦麦拼单导演：用真实麦当劳 MCP 数据安排多人配餐、核价与分摊。",
-  "engines": { "node": ">=22.9.0" },
+  "engines": {
+    "node": ">=22.9.0"
+  },
   "scripts": {
-    "mcp": "node --env-file-if-exists=.env scripts/mcp.mjs"
+    "mcp": "node --env-file-if-exists=.env scripts/mcp.mjs",
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/client": "2.3.1"
