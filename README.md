@@ -1,10 +1,12 @@
-# 麦麦拼单 · Meal Together
+# 麦麦拼单 · 多人点餐 Skill
 
 **账算明白，拼单不烧心。**
 
 把同事、朋友和家人的自然语言需求，变成有真实门店、真实餐品、整单核价和分摊建议的麦当劳多人餐单。
 
-**[打开交互演示 →](https://lizheyong.github.io/mcd-meal-director/)** · [查看真实调用记录](examples/live-run.md) · [阅读 Skill](skills/mcd-meal-director/SKILL.md)
+**核心交付是一份能装进 AI 客户端的 Skill。** 它替组织者记住每人的口味，把套餐组件分到人、把共享品只计一次，并在临时改餐或减员后重组购物清单、重新核价与分摊。网页用真实调用案例展示这些能力，实时配餐由你的 AI 客户端连接官方 MCP 执行。
+
+**[打开产品页与真实案例 →](https://lizheyong.github.io/mcd-meal-director/)** · [直接下载 Skill](https://lizheyong.github.io/mcd-meal-director/assets/mcd-meal-director.zip) · [查看真实调用记录](examples/live-run.md) · [阅读 Skill](skills/mcd-meal-director/SKILL.md)
 
 已完成官方 MCP 实测，附两种有明确取舍的四人餐单：
 
@@ -41,6 +43,18 @@
 | “发给大家确认” | 给出可以直接转发的餐单，网页可下载 PNG 分享卡 |
 
 主要面向工作室、办公室、朋友聚餐和家庭用餐的组织者。它运行在支持 Skill 和 MCP 的 AI 客户端里；模型负责需求理解、配餐和解释，官方 MCP 负责业务数据与价格。
+
+## 独立实跑：三人变两人
+
+另一组真实需求在不同门店重新查询菜单、套餐详情和价格，没有复用四人示例。
+
+| 变化 | 官方整单核价 | 结果 |
+| --- | ---: | --- |
+| 三人各一堡一杯，共享5块麦乐鸡 | ¥57.70 | 65元预算内，含无糖饮料 |
+| 一人退出，保留另外两人的餐品和小食 | ¥43.80 | 超出新的40元预算3.80元 |
+| 按用户允许的取舍取消共享小食 | ¥29.80 | 两人的原汉堡、饮料保留，AA各14.90元 |
+
+门店：上海徐汇漕溪北路百脑汇餐厅；核价时间：2026-10-14 22:13–22:14。三次都提交完整购物清单给官方接口。试跑覆盖查询与核价，没有下单或验证履约。口味判断依据与工具数据的局限见[实跑报告及请求、响应](examples/skill-trial/report.md)。
 
 ## 快速开始：Codex CLI
 
@@ -92,6 +106,12 @@ codex
 - 临时换餐后，明确展示餐品变化与重算结果。
 
 价格、可售商品、优惠与时段可能变化，以实际下单时官方结果为准。
+
+## Claude Code
+
+下载 Skill ZIP，将其中的 `mcd-meal-director` 文件夹放入 `~/.claude/skills/`。配置官方 HTTP MCP 服务与本地凭证后，在 Claude Code 中调用 `/mcd-meal-director`，跟上人数、公共地点或门店、口味与预算。接着在同一对话中提出改餐或人数变化。
+
+目录和调用方式依据 [Claude Code Skills 官方文档](https://code.claude.com/docs/en/skills)。本次独立行为实跑由 Codex 代理按 Skill 通过官方 SDK 完成；这里提供 Claude Code 安装说明，未声称其完整客户端流程已实测。
 
 ## 其他 Skill / MCP 客户端
 

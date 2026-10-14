@@ -1,0 +1,32 @@
+{
+  "observedAt": "2026-10-14T14:14:12.297Z",
+  "server": "https://mcp.mcd.cn",
+  "tool": "calculate-price",
+  "success": true,
+  "code": 200,
+  "message": "请求成功",
+  "isError": false,
+  "data": {
+    "price": 2980,
+    "originalPrice": 2980,
+    "productPrice": 2980,
+    "productOriginalPrice": 2980,
+    "discount": 0,
+    "productList": [
+      {
+        "productCode": "9900013304",
+        "productName": "人气经典随心配",
+        "quantity": 1,
+        "originalSubtotal": 1490,
+        "subtotal": 1490
+      },
+      {
+        "productCode": "9900013304",
+        "productName": "人气经典随心配",
+        "quantity": 1,
+        "originalSubtotal": 1490,
+        "subtotal": 1490
+      }
+    ]
+  }
+}

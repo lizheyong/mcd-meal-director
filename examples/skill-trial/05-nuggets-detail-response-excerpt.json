@@ -1,0 +1,15 @@
+{
+  "observedAt": "2026-10-14T14:13:17.770Z",
+  "server": "https://mcp.mcd.cn",
+  "tool": "query-meal-detail",
+  "success": true,
+  "code": 200,
+  "message": "请求成功",
+  "data": {
+    "code": "1401",
+    "name": "麦乐鸡5块",
+    "rounds": [],
+    "image": "https://menu-img.mcd.cn/pcm/prod/menu/20260529/product/MS_1401_600.png",
+    "supportModify": false
+  }
+}

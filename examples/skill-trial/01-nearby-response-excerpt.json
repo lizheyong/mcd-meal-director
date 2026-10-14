@@ -1,0 +1,21 @@
+{
+  "source": "https://mcp.mcd.cn",
+  "tool": "query-nearby-stores",
+  "observedAt": "2026-10-14T14:11:37.709Z",
+  "success": true,
+  "selectedForTrial": {
+    "storeCode": "1450323",
+    "storeName": "麦当劳上海徐汇漕溪北路百脑汇餐厅",
+    "address": "漕溪北路339号",
+    "distance": 121,
+    "businessStatus": true,
+    "businessStartTime": "06:30",
+    "businessEndTime": "23:00",
+    "reservation": true,
+    "reservationTimeOptions": [
+      {"date":"2026-10-14","today":true,"reservationOptionText":"宵夜(22:14至22:46)"},
+      {"date":"2026-10-15","today":false,"reservationOptionText":"早餐(06:44至10:15)，午餐(10:44至14:15)，下午茶(14:44至16:45)，夜市(17:14至21:45)，宵夜(22:14至22:46)"}
+    ]
+  },
+  "assumption": "选距公共查询地点最近且营业中的门店；按当前到店自取，未指定预约。distance 为接口相对位置关键词的结果，不声称是用户当前位置。"
+}

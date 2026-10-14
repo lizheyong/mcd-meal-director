@@ -1,0 +1,46 @@
+{
+  "observedAt": "2026-10-14T14:13:46.232Z",
+  "server": "https://mcp.mcd.cn",
+  "tool": "calculate-price",
+  "success": true,
+  "code": 200,
+  "message": "请求成功",
+  "isError": false,
+  "data": {
+    "price": 5770,
+    "originalPrice": 5770,
+    "productPrice": 5770,
+    "productOriginalPrice": 5770,
+    "discount": 0,
+    "productList": [
+      {
+        "productCode": "9900013304",
+        "productName": "人气经典随心配",
+        "quantity": 1,
+        "originalSubtotal": 1490,
+        "subtotal": 1490
+      },
+      {
+        "productCode": "9900013304",
+        "productName": "人气经典随心配",
+        "quantity": 1,
+        "originalSubtotal": 1490,
+        "subtotal": 1490
+      },
+      {
+        "productCode": "9900015568",
+        "productName": "精选超值随心配",
+        "quantity": 1,
+        "originalSubtotal": 1390,
+        "subtotal": 1390
+      },
+      {
+        "productCode": "1401",
+        "productName": "麦乐鸡5块",
+        "quantity": 1,
+        "originalSubtotal": 1400,
+        "subtotal": 1400
+      }
+    ]
+  }
+}

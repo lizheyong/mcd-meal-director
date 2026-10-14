@@ -5,6 +5,32 @@ import { mealPlan, money, shareText, shareSvg } from '../docs/meal.js';
 
 const readExample = async name => JSON.parse(await readFile(new URL(`../examples/${name}`, import.meta.url), 'utf8'));
 
+test('member departure trial preserves remaining meals and reconciles all three official quotes', async () => {
+  const summary = await readExample('skill-trial/result-summary.json');
+  for (const state of [summary.before, summary.keepSnackCandidate, summary.after]) {
+    const quote = await readExample(`skill-trial/${state.evidence}`);
+    assert.equal(quote.success, true);
+    assert.equal(state.priceCents, quote.data.price);
+    assert.equal(quote.data.productList.reduce((sum, item) => sum + item.subtotal, 0), state.priceCents);
+  }
+  const before = await readExample('skill-trial/06-three-price-request.json');
+  const keep = await readExample('skill-trial/07-two-keep-snack-price-request.json');
+  const after = await readExample('skill-trial/08-two-final-price-request.json');
+  assert.deepEqual(keep.items, [...before.items.slice(0, 2), before.items[3]]);
+  assert.deepEqual(after.items, before.items.slice(0, 2));
+  assert.equal(summary.keepSnackCandidate.priceCents - summary.after.budgetCents, summary.keepSnackCandidate.overBudgetCents);
+  assert.ok(summary.after.priceCents <= summary.after.budgetCents);
+  assert.equal(summary.after.priceCents - summary.before.priceCents, summary.after.totalChangeCents);
+  for (const state of [summary.before, summary.after]) {
+    assert.equal(state.people.reduce((sum, person) => sum + person.aaCents, 0), state.priceCents);
+  }
+  for (const person of summary.after.people) {
+    const original = summary.before.people.find(p => p.name === person.name);
+    assert.deepEqual(person.food, original.food);
+    assert.equal(person.aaCents - original.aaCents, person.aaChangeCents);
+  }
+});
+
 for (const mode of ['shared', 'budget']) {
   for (const fish of [false, true]) {
     test(`${mode}, fish=${fish}: display and sharing reconcile to the official response`, async () => {

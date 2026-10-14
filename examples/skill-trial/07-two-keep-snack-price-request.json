@@ -1,0 +1,60 @@
+{
+  "storeCode": "1450323",
+  "orderType": 1,
+  "beType": 1,
+  "needTableware": false,
+  "items": [
+    {
+      "productCode": "9900013304",
+      "quantity": 1,
+      "roundList": [
+        {
+          "round": "1",
+          "comboItemList": [
+            {
+              "code": "1120",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "round": "2",
+          "comboItemList": [
+            {
+              "code": "3050",
+              "quantity": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "productCode": "9900013304",
+      "quantity": 1,
+      "roundList": [
+        {
+          "round": "1",
+          "comboItemList": [
+            {
+              "code": "1600",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "round": "2",
+          "comboItemList": [
+            {
+              "code": "3060",
+              "quantity": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "productCode": "1401",
+      "quantity": 1
+    }
+  ]
+}

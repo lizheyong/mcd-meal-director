@@ -1,0 +1,43 @@
+{
+  "trial": "徐家汇三人拼单后小李退出",
+  "source": "https://mcp.mcd.cn",
+  "date": "2026-10-14",
+  "timezone": "Asia/Shanghai",
+  "store": {"name":"麦当劳上海徐汇漕溪北路百脑汇餐厅","address":"漕溪北路339号","storeCode":"1450323"},
+  "fulfillment": "当前到店自取",
+  "before": {
+    "priceCents":5770,
+    "budgetCents":6500,
+    "quotedAt":"2026-10-14T14:13:46.232Z",
+    "people":[
+      {"name":"小安","food":["双层吉士汉堡","可乐中杯"],"aaCents":1924},
+      {"name":"小白","food":["麦香鱼","雪碧中杯"],"aaCents":1923},
+      {"name":"小李","food":["麦香鸡","无糖可口可乐中杯"],"aaCents":1923}
+    ],
+    "shared":[{"name":"麦乐鸡5块","quantity":1,"participants":["小安","小白","小李"]}],
+    "evidence":"06-three-price-response-excerpt.json"
+  },
+  "keepSnackCandidate": {
+    "people":["小安","小白"],
+    "priceCents":4380,
+    "budgetCents":4000,
+    "overBudgetCents":380,
+    "evidence":"07-two-keep-snack-price-response-excerpt.json"
+  },
+  "after": {
+    "priceCents":2980,
+    "budgetCents":4000,
+    "quotedAt":"2026-10-14T14:14:12.297Z",
+    "people":[
+      {"name":"小安","food":["双层吉士汉堡","可乐中杯"],"aaCents":1490,"aaChangeCents":-434},
+      {"name":"小白","food":["麦香鱼","雪碧中杯"],"aaCents":1490,"aaChangeCents":-433}
+    ],
+    "shared":[],
+    "removed":["小李的麦香鸡与无糖可乐套餐","共享麦乐鸡5块"],
+    "totalChangeCents":-2790,
+    "evidence":"08-two-final-price-response-excerpt.json"
+  },
+  "scope":"真实菜单与官方整单核价通过；未创建订单、支付或验证履约",
+  "rounding":"三人AA产生1分尾差，给名单首位小安；两人无尾差。",
+  "dietEvidenceLimit":"麦香鱼按常规非辣鱼肉堡选择；MCP菜单与详情未提供正式辣度或完整成分标签。"
+}
