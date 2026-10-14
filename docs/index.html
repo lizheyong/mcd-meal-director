@@ -20,10 +20,10 @@
         <div class="hero-copy">
           <div class="eyebrow"><span class="live-dot"></span> 麦当劳 MCP · 多人点餐 Skill</div>
           <h1 id="hero-title">人多口味多，<br>拼单<span class="highlight">不烧心<svg viewBox="0 0 300 18" aria-hidden="true"><path d="M3 12 Q150 0 297 9"/></svg></span>。</h1>
-          <p class="hero-lead">把每个人想吃的，变成一份<br><strong>真正能买的餐单。</strong></p>
-          <p class="hero-description">告诉 AI 人数、口味和预算。它查真实菜单、拆套餐、算整单；有人临时改主意，再接着改。</p>
-          <div class="hero-actions"><a href="#install" class="primary">把 Skill 装进 AI <span>↗</span></a><a href="#workflow" class="text-link">看看它怎么做 ↓</a></div>
-          <div class="hero-meta"><span>开源免费</span><span>在自己的 AI 客户端运行</span></div>
+          <p class="hero-lead"><strong>装进 Agent，用对话点明白一顿饭。</strong></p>
+          <p class="hero-description">在 Codex、Claude Code 等 Agent 里说人数、口味和预算。Skill 查菜单、拆套餐、核整单；临时改餐，继续同一段对话。</p>
+          <div class="hero-actions"><a href="#install" class="primary">把 Skill 装进 Agent <span>↗</span></a><a href="#workflow" class="text-link">看看它怎么做 ↓</a></div>
+          <div class="hero-meta"><span>开源免费</span><span>在 Agent 对话里使用</span></div>
         </div>
         <div class="hero-demo" aria-label="四人配餐案例预览">
           <div class="request-note"><span class="request-avatar" aria-hidden="true">你</span><p>四个人，120 元。<br>一个不吃辣，一个要无糖，还想分点小食。</p><span class="note-arrow" aria-hidden="true">↗</span></div>
@@ -42,37 +42,31 @@
       </section>
       <section class="value-strip" aria-label="Skill 帮你完成的工作"><p>你负责说想吃什么。<br><strong>剩下的来回沟通，交给 Skill。</strong></p><div><span>01</span>记住每个人的口味</div><div><span>02</span>把套餐拆分到人</div><div><span>03</span>改餐后重新算账</div></section>
       <section class="workflow section-block" id="workflow" aria-labelledby="workflow-title">
-        <div class="section-head"><div><div class="eyebrow">HOW IT WORKS / 它怎么帮你</div><h2 id="workflow-title">一句话开始，<br>把一顿饭安排完整。</h2></div><p class="section-description">不用把需求填进一长串表格。<br>在支持 Skill 和 MCP 的 AI 客户端里，直接聊。</p></div>
-        <div class="workflow-layout">
-          <div class="flow-steps" role="group" aria-label="查看 Skill 处理步骤">
-            <button type="button" class="flow-step" data-step="0" aria-pressed="true" aria-controls="flow-panel"><span>01</span><div><strong>听懂大家想吃什么</strong><p>口味、预算、共享意愿，分别对应到人。</p></div><i>↗</i></button>
-            <button type="button" class="flow-step" data-step="1" aria-pressed="false" aria-controls="flow-panel"><span>02</span><div><strong>查菜单，把套餐拆开分</strong><p>谁拿汉堡、谁拿饮料，共享品买几份。</p></div><i>↗</i></button>
-            <button type="button" class="flow-step" data-step="2" aria-pressed="false" aria-controls="flow-panel"><span>03</span><div><strong>整单核价，算清每人费用</strong><p>按实际组合核价，预算和分摊一起交代。</p></div><i>↗</i></button>
-            <button type="button" class="flow-step" data-step="3" aria-pressed="false" aria-controls="flow-panel"><span>04</span><div><strong>临时改餐，接着聊就好</strong><p>保留其他需求，说明改了什么、贵了多少。</p></div><i>↗</i></button>
+        <div class="section-head"><div><div class="eyebrow">IN YOUR AGENT / 就在对话里</div><h2 id="workflow-title">说想吃什么，<br>再接着说哪里要改。</h2></div><p class="section-description">安装 Skill、连接麦当劳 MCP 后，<br>在 Codex、Claude Code 等 Agent 里直接聊。</p></div>
+        <div class="agent-conversation">
+          <div class="conversation-top"><span><i class="live-dot"></i> 你的 Agent · 麦麦拼单 Skill</span><small>根据真实请求与结果整理的对话回放</small></div>
+          <div class="conversation-body">
+            <article class="conversation-turn user-turn"><span class="speaker">你</span><p>用麦麦拼单安排一下：四个人在上海徐家汇取餐，预算 120 元。小林不吃辣，小周要无糖，小陈想吃鸡肉，小许想分小食。基础餐费 AA。</p></article>
+            <article class="conversation-turn agent-turn"><span class="speaker">Agent</span><div class="tool-trail"><span>✓ 查门店菜单</span><span>✓ 查套餐选项</span><span>✓ 官方整单核价</span></div><p>安排好了，<strong>4 个汉堡、4 杯饮料，共享 10 块麦乐鸡和 1 份中薯。</strong>三份套餐拆给四个人，小周配无糖可乐。</p><div class="chat-result"><strong>¥<span id="chat-initial-price">100.30</span></strong><span>预算内 · 还余 ¥19.70<br>每人拿什么、付多少，见下方餐单 ↓</span></div></article>
+            <article class="conversation-turn user-turn"><span class="speaker">你</span><p>小周换成麦香鱼，无糖可乐留着，差价他自己付。</p></article>
+            <article class="conversation-turn agent-turn"><span class="speaker">Agent</span><div class="tool-trail"><span>✓ 保留其余需求</span><span>✓ 重新核算整单</span></div><p>已换麦香鱼。<strong>整单 ¥100.30 → ¥101.30</strong>，小周分摊 ¥25.08 → ¥26.08。其他三人的餐品与分摊保持不变。</p><div class="chat-change"><img src="./assets/food/1600.png" alt="改餐后的麦香鱼" width="94" height="76"><span>小周的麦香鱼 + 无糖可乐<br><b>换堡差价 ¥1.00 · 由本人承担</b></span></div></article>
           </div>
-          <div class="flow-preview"><div class="flow-top"><span><i class="live-dot"></i> SKILL IN ACTION</span><button id="play-flow" type="button">播放过程 ▷</button></div><div id="flow-panel" aria-live="polite"></div><div class="flow-bottom"><span>四人案例 · 真实调用过程摘录</span><a href="https://github.com/lizheyong/mcd-meal-director/blob/main/examples/live-run.md">查看依据 ↗</a></div></div>
+          <div class="conversation-bottom"><span>在 Agent 中继续说“有人不来了”或“少花一点”，Skill 会接着处理。</span><a href="https://github.com/lizheyong/mcd-meal-director/blob/main/examples/live-run.md">查看调用依据 ↗</a></div>
         </div>
       </section>
       <section class="section-block meal-section" id="meal-table" aria-labelledby="table-title">
-        <div class="section-head"><div><div class="eyebrow">TRY THE RESULT / 看交付结果</div><h2 id="table-title">每个人吃什么，<br>每一块钱花在哪。</h2></div><div class="snapshot-label">官方核价回放 · 2026.10.14<small>上海徐家汇餐厅 · 到店取餐</small></div></div>
+        <div class="section-head"><div><div class="eyebrow">AGENT OUTPUT / 它交付的餐单</div><h2 id="table-title">每个人吃什么，<br>每一块钱花在哪。</h2></div><div class="snapshot-label">官方核价回放 · 2026.10.14<small>上海徐家汇餐厅 · 到店取餐</small></div></div>
         <p class="scene-brief">小林不吃辣，小周要无糖，小陈想吃鸡肉，小许想分小食。<strong>4 人，预算 ¥120。</strong></p>
-        <div class="plan-options" aria-label="选择演示配餐方案">
-          <button type="button" class="plan-option" id="choose-shared" aria-pressed="true"><span class="option-top"><span class="option-name"><i class="radio-dot"></i>共享多一点</span><span class="option-price">¥<b id="shared-price">100.30</b></span></span><span class="option-desc">4 堡 4 饮 · 麦乐鸡 10 块 + 中薯</span><span class="option-trade">保留巨无霸和板烧，大家一起分小食。</span></button>
-          <button type="button" class="plan-option" id="choose-budget" aria-pressed="false"><span class="option-top"><span class="option-name"><i class="radio-dot"></i>小食少一点</span><span class="option-price">¥<b id="budget-price">65.60</b></span></span><span class="option-desc">4 堡 4 饮 · 共享中薯 1 份</span><span class="option-trade">少 ¥34.70：少 10 块麦乐鸡，换 2 个堡。</span></button>
-        </div>
-        <p class="compare-note">点击方案比较取舍，再试着给小周换个堡。这里回放真实核价结果；实时配餐在你的 AI 客户端中运行。</p>
+        <p class="compare-note">这是上方第一轮对话交付的餐单，金额来自官方核价快照。你在 Agent 中说需求，Skill 负责配餐、核价和分摊。</p>
         <div class="workspace">
           <section class="table-stage" aria-label="分人餐单">
             <div class="section-line"><h3>每个人，拿这一份</h3><span>每人 1 堡 + 1 饮 · 按约定分摊</span></div>
             <div class="people" id="people"></div>
             <div class="shared-food"><div class="shared-photos" id="shared-photos"></div><div><strong>放中间，一起吃。</strong><p id="shared-food"></p><small>已包含在套餐里，采购计一次。</small></div></div>
-            <section class="change-scene" aria-label="临时改餐演示"><div class="scene-dialogue"><p>小周换麦香鱼，保留无糖可乐</p><span id="change-caption">换麦香鱼加 ¥1.00，由小周自己承担。</span></div><button type="button" id="change-meal" aria-pressed="false">试试换堡 <span>+¥1.00</span></button></section>
-            <div class="change-ledger" id="change-ledger" hidden><span>小周 <b id="zhou-delta"></b></span><span>整单 <b id="total-delta"></b></span><p>无糖可乐照旧；另外三人的餐品与分摊保留。</p></div>
-            <p class="tradeoff" id="tradeoff"></p>
           </section>
           <aside class="bill" aria-labelledby="bill-title">
             <div class="bill-top"><span>MEAL RECEIPT</span><span>4 PERSONS</span></div><h3 id="bill-title">这顿饭，账在这里。</h3><div class="total"><small>¥</small><strong id="total">100.30</strong><span>整单金额</span></div><div class="budget-line"><span>预算 ¥120.00</span><span>还余 <b id="remaining">¥19.70</b></span></div><div class="budget-track" role="progressbar" aria-label="预算使用金额" aria-valuemin="0" aria-valuemax="120" aria-valuenow="100.3" id="budget-track"><div id="budget-fill"></div></div>
-            <div class="tear-line"></div><p class="bill-label">向门店买这些</p><div id="shopping-list"></div><p class="bill-rule" id="split-rule"></p><p class="split-sum" id="split-sum" aria-label="分摊合计核对"></p><div class="tear-line"></div><div class="quote-proof"><span class="live-dot"></span><div>官方接口核价快照<small id="quote-time"></small></div><a id="response-link" href="https://github.com/lizheyong/mcd-meal-director/blob/main/examples/quote-before.result.json" aria-label="查看当前官方核价响应">查账 ↗</a></div><button type="button" id="open-share" class="primary">生成群餐单 <span aria-hidden="true">↗</span></button><p class="bill-footnote">演示人物 · 历史报价 · 未下单</p>
+            <div class="tear-line"></div><p class="bill-label">向门店买这些</p><div id="shopping-list"></div><p class="bill-rule" id="split-rule"></p><p class="split-sum" id="split-sum" aria-label="分摊合计核对"></p><div class="tear-line"></div><div class="quote-proof"><span class="live-dot"></span><div>官方接口核价快照<small id="quote-time"></small></div><a id="response-link" href="https://github.com/lizheyong/mcd-meal-director/blob/main/examples/quote-before.result.json" aria-label="查看当前官方核价响应">查账 ↗</a></div><button type="button" id="open-share" class="primary">查看转发餐单示例 <span aria-hidden="true">↗</span></button><p class="bill-footnote">演示人物 · 历史报价 · 未下单</p>
           </aside>
         </div>
         <details class="source-note" id="about-demo"><summary>价格和餐单，有据可查。</summary><div><p>2026 年 10 月 14 日，使用麦当劳官方 MCP 查询上海徐家汇餐厅（天钥桥路 1 号）的到店菜单。四名成员与需求是演示案例；套餐选项和四份整单报价来自真实调用。</p><p>页面回放保存的结果。分摊是演示中约定的 AA 方案，个人换堡自付差价；不是官方商品单价。餐品供应和价格以实际下单时的官方结果为准。</p><p>餐品图片来自麦当劳官方菜单，展示对应商品；具体份量以餐单文字为准。<a href="https://github.com/lizheyong/mcd-meal-director/blob/main/docs/assets/food/sources.json">查看图片来源 ↗</a></p><a href="https://github.com/lizheyong/mcd-meal-director/blob/main/examples/live-run.md">查看请求参数、响应与完整过程 ↗</a></div></details>
@@ -87,14 +81,17 @@
         <p class="evidence-note">2026.10.14 · 上海徐汇漕溪北路百脑汇餐厅 · 到店自取。三份清单分别调用官方核价，未下单。<a href="https://github.com/lizheyong/mcd-meal-director/blob/main/examples/skill-trial/report.md">查看实测与依据 ↗</a></p>
       </section>
       <section class="install-section section-block" id="install" aria-labelledby="install-title">
-        <div class="install-intro"><div class="eyebrow">GET THE SKILL / 开始用</div><h2 id="install-title">把它装进<br>你正在用的 AI。</h2><p>需要支持 Skill / MCP 的客户端，<br>以及你自己的麦当劳 MCP Token。</p><a class="primary" href="./assets/mcd-meal-director.zip" download>下载 Skill <span>↓</span></a><a class="text-link" href="https://github.com/lizheyong/mcd-meal-director/tree/main/skills/mcd-meal-director">先读 Skill 源码 ↗</a><small>Skill 开源免费；模型与 MCP 服务使用你的账户。</small></div>
+        <div class="install-intro"><div class="eyebrow">GET THE SKILL / 开始用</div><h2 id="install-title">把它装进<br>你正在用的 Agent。</h2><p>需要支持 Skill / MCP 的客户端，<br>以及你自己的麦当劳 MCP Token。</p><a class="primary" href="./assets/mcd-meal-director.zip" download>下载 Skill <span>↓</span></a><a class="text-link" href="https://github.com/lizheyong/mcd-meal-director/tree/main/skills/mcd-meal-director">先读 Skill 源码 ↗</a><small>Skill 开源免费；模型与 MCP 服务使用你的账户。</small></div>
         <div class="install-steps">
           <article><span class="install-number">1</span><div><h3>让客户端发现 Skill</h3><p>解压后，把 <code>mcd-meal-director</code> 文件夹放入客户端的技能目录。</p><div class="client-paths"><span>Codex <code>~/.agents/skills/</code></span><span>Claude Code <code>~/.claude/skills/</code></span></div></div></article>
           <article><span class="install-number">2</span><div><h3>连接麦当劳官方 MCP</h3><p>在<a href="https://open.mcd.cn/mcp">官方开放平台 ↗</a>登录并激活 Token，再在客户端配置服务。</p><div class="endpoint"><code>https://mcp.mcd.cn</code><span>Streamable HTTP · Bearer Token</span></div><a class="small-link" href="https://github.com/lizheyong/mcd-meal-director#快速开始codex-cli">查看完整配置步骤 ↗</a></div></article>
-          <article><span class="install-number">3</span><div><h3>直接说，这顿饭怎么吃</h3><p>用下面的示例组织自己的需求，复制到已配置的 AI 客户端。临时改餐，继续同一个对话。</p><a class="small-link" href="#composer">准备第一条需求 ↓</a></div></article>
+          <article><span class="install-number">3</span><div><h3>直接说，这顿饭怎么吃</h3><p>回到已配置的 Agent，直接说人数、口味和预算。临时改餐或有人退出，继续同一个对话。</p><a class="small-link" href="#start-conversation">看看怎么开聊 ↓</a></div></article>
         </div>
       </section>
-      <section class="composer" id="composer" aria-labelledby="composer-title"><div class="composer-intro"><div class="eyebrow">YOUR FIRST MEAL / 试一次</div><h2 id="composer-title">下一顿，<br>轮到你来安排。</h2><p>用自己的话说，不用逐项勾选。<br>把需求交给已接入 Skill 与麦当劳 MCP 的 AI 客户端，让它查询、配餐、核价。</p><a href="https://github.com/lizheyong/mcd-meal-director#快速开始codex-cli">安装 Skill 与连接说明 ↗</a></div><div class="composer-paper"><div class="prompt-presets" role="group" aria-label="选一个需求示例"><button type="button" data-preset="lunch" aria-pressed="true">办公室拼单</button><button type="button" data-preset="change" aria-pressed="false">临时改餐</button><button type="button" data-preset="leave" aria-pressed="false">有人退出</button></div><label for="meal-request">这一餐，听你说</label><textarea id="meal-request" aria-describedby="request-help" rows="5" placeholder="比如：我们五个人在杭州，一位不吃牛肉，预算 150 元，想分享小食……">我们四个人在上海徐家汇到店取餐，预算 120 元。小林不吃辣，小周要无糖饮料，小陈想吃鸡肉，小许想分享小食。基础餐费大家同意 AA，临时加价自己付。</textarea><div class="composer-actions"><small id="request-help" role="status">本页整理任务文本，复制后到 AI 客户端运行。</small><button type="button" class="primary" id="prepare-task">整理这段需求 ↗</button></div><div id="task-output" hidden><label for="task-text">复制到你的 AI 客户端</label><textarea readonly id="task-text" rows="8"></textarea><button type="button" id="copy-task" class="secondary">复制任务</button><span class="inline-status" id="task-status" role="status"></span></div></div></section>
+      <section class="start-conversation section-block" id="start-conversation" aria-labelledby="start-title">
+        <div class="section-head"><div><div class="eyebrow">START A CONVERSATION / 开聊</div><h2 id="start-title">装好之后，<br>在 Agent 里这样说。</h2></div><p class="section-description">一句话就可以开始。<br>人数、口味、预算，按你的情况告诉它。</p></div>
+        <div class="starter-message"><span class="speaker">发给你的 Agent</span><p id="starter-text">用麦麦拼单 Skill 帮我们四个人安排麦当劳：上海徐家汇到店取餐，预算 120 元。小林不吃辣，小周要无糖饮料，小陈想吃鸡肉，小许想分享小食。先给我们餐单、官方核价和分摊建议。</p><div class="starter-actions"><button id="copy-starter" class="secondary" type="button">复制这句示例 ↗</button><span id="starter-status" role="status">复制后，在已配置 Skill 和 MCP 的 Agent 中发送。</span></div></div>
+      </section>
       <aside class="meme-note" id="meme-note"><strong>账算明白，拼单不烧心。</strong><p>一份餐归谁，一块钱花哪，都说清楚。</p><small>借红果短剧的梗，说的是一起点餐更省心。<a href="https://www.36kr.com/p/4016896338120585">梗的来由 ↗</a></small></aside>
     </main>
     <footer><span>麦麦拼单 · 独立参赛作品，非麦当劳官方产品。</span><div><a href="https://github.com/lizheyong/mcd-meal-director/blob/main/DESIGN_NOTES.md">设计参考</a><a href="https://github.com/M-China/mcd-developer-innovation-challenge/issues/689">已成功参赛 ↗</a></div></footer>

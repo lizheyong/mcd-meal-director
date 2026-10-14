@@ -65,10 +65,6 @@ export function shareText(plan) {
   ].filter((line, i, list) => line !== '' || list[i - 1] !== '').join('\n');
 }
 
-export function taskPrompt(requirements) {
-  return `请使用已安装的「麦麦拼单」（mcd-meal-director）Skill 帮我安排这顿麦当劳。\n\n${requirements.trim()}\n\n请理解每个人的自然语言需求，查询实际门店和菜单，组织分人餐单与完整购物清单。存在值得比较的取舍时，给出有差异的候选并逐一官方核价，说明省了什么、改了什么。明确共享归属、分摊约定与核价时间。发生改餐时保留仍适用的需求，重新核算完整清单并解释每人的变化。最后生成可转发的餐单。这次先做配餐草案。`;
-}
-
 export function shareSvg(plan) {
   const rows = plan.people.map((p, i) => {
     const y = 264 + i * 132;
