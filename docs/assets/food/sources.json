@@ -1,0 +1,72 @@
+{
+  "source": "麦当劳中国官方 MCP query-menu / query-meal-detail",
+  "observedDate": "2026-10-14",
+  "items": [
+    {
+      "code": "1100",
+      "name": "巨无霸",
+      "image": "https://menu-img.mcd.cn/pcm/prod/menu/20260309/product/MS_1100_320.png",
+      "file": "./assets/food/1100.png"
+    },
+    {
+      "code": "1406",
+      "name": "板烧鸡腿堡",
+      "image": "https://menu-img.mcd.cn/pcm/prod/menu/20241008/product/MS_1406_320.png",
+      "file": "./assets/food/1406.png"
+    },
+    {
+      "code": "521316",
+      "name": "高达吉士双牛堡",
+      "image": "https://menu-img.mcd.cn/pcm/prod/menu/20260309/product/MS_521316_320.png",
+      "file": "./assets/food/521316.png"
+    },
+    {
+      "code": "1450",
+      "name": "麦香鸡",
+      "image": "https://menu-img.mcd.cn/pcm/prod/menu/ProductPool/product/MS_1450_320.png",
+      "file": "./assets/food/1450.png"
+    },
+    {
+      "code": "1600",
+      "name": "麦香鱼",
+      "image": "https://menu-img.mcd.cn/pcm/prod/menu/20260101/product/MS_1600_320.png",
+      "file": "./assets/food/1600.png"
+    },
+    {
+      "code": "1120",
+      "name": "双层吉士汉堡",
+      "image": "https://menu-img.mcd.cn/pcm/prod/menu/20260309/product/MS_1120_320.png",
+      "file": "./assets/food/1120.png"
+    },
+    {
+      "code": "521147",
+      "name": "Hold不住鸡排堡（椒盐风味）",
+      "image": "https://menu-img.mcd.cn/pcm/prod/menu/20260520/product/MS_521147_600.png",
+      "file": "./assets/food/521147.png"
+    },
+    {
+      "code": "3050",
+      "name": "可口可乐（中杯）",
+      "image": "https://menu-img.mcd.cn/pcm/prod/menu/ProductPool/product/MS_3050_600.png",
+      "file": "./assets/food/3050.png"
+    },
+    {
+      "code": "3071",
+      "name": "无糖可口可乐中杯",
+      "image": "https://menu-img.mcd.cn/pcm/prod/menu/ProductPool/product/MS_3071_600.png",
+      "file": "./assets/food/3071.png"
+    },
+    {
+      "code": "1401",
+      "name": "麦乐鸡",
+      "image": "https://menu-img.mcd.cn/pcm/prod/menu/20260529/product/MS_G1401_320.png",
+      "file": "./assets/food/1401.png"
+    },
+    {
+      "code": "4810",
+      "name": "薯条",
+      "image": "https://menu-img.mcd.cn/pcm/prod/menu/20250523/product/MS_G4810_320_1747877491921.png",
+      "file": "./assets/food/4810.png"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { mealPlan, money, shareText, shareSvg, taskPrompt } from './meal.js';
+import { mealPlan, money, shareText, shareSvg, taskPrompt, foodImage } from './meal.js';
 
 const byId = id => document.getElementById(id);
 let mode = 'shared';
@@ -15,9 +15,10 @@ function render(announce = true) {
   byId('people').innerHTML = plan.people.map((p, i) => `
     <article class="person ${fish && i === 1 ? 'changed' : ''}" aria-label="${p.name}的餐单">
       <div class="person-header"><span class="avatar" aria-hidden="true">${p.initial}</span><div><div class="person-name">${p.name}</div><div class="person-wish">${p.wish}</div></div><div class="person-price"><small>¥</small>${money(p.amount)}</div></div>
-      <p class="person-food">${p.food}</p><p class="person-drink">${p.drink}</p><p class="person-change">${fish && i === 1 ? '换堡 +¥1.00 · 由小周承担' : ''}</p><p class="person-share">${p.shared}</p>
+      <div class="person-meal"><div class="person-photos"><img class="food-photo" src="${foodImage(p.foodCode)}" alt="${p.food}" width="200" height="150"><img class="drink-photo" src="${foodImage(p.drinkCode)}" alt="${p.drink}" width="150" height="150"></div><div class="person-details"><p class="person-food">${p.food}</p><p class="person-drink">${p.drink}</p><p class="person-change">${fish && i === 1 ? '换堡 +¥1.00 · 由小周承担' : ''}</p></div></div><p class="person-share">${p.shared}</p>
     </article>`).join('');
   byId('shared-food').textContent = plan.sharedFood;
+  byId('shared-photos').innerHTML = plan.sharedItems.map(p => `<figure><img src="${foodImage(p.code)}" alt="${p.name}" width="100" height="80"><figcaption>${p.name} × ${p.quantity}</figcaption></figure>`).join('');
   byId('total').textContent = money(plan.total);
   byId('remaining').textContent = `¥${money(plan.remaining)}`;
   byId('budget-fill').style.width = `${plan.total / 12000 * 100}%`;
@@ -30,7 +31,7 @@ function render(announce = true) {
   byId('response-link').href = plan.source;
   byId('change-meal').setAttribute('aria-pressed', String(fish));
   byId('change-meal').innerHTML = fish ? '撤回这次换堡 <span>−¥1.00</span>' : '试试换堡 <span>+¥1.00</span>';
-  byId('change-caption').textContent = fish ? '导演：“换堡加一块，其他人的账照旧。”' : '这就看看，临时改餐会动到谁的账。';
+  byId('change-caption').textContent = fish ? '已换麦香鱼，小周自付 ¥1.00；其他人分摊不变。' : '换麦香鱼加 ¥1.00，由小周自己承担。';
   byId('change-ledger').hidden = !fish;
   byId('zhou-delta').textContent = `¥${money(base.people[1].amount)} → ¥${money(plan.people[1].amount)}`;
   byId('total-delta').textContent = `¥${money(base.total)} → ¥${money(plan.total)}`;

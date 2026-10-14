@@ -1,5 +1,5 @@
 interface:
-  display_name: "麦麦拼单导演"
+  display_name: "麦麦拼单"
   short_description: "把多人需求变成真实可买的餐单，核算整单价格、共享份数和每人分摊"
   default_prompt: "用 $mcd-meal-director 帮我们安排一顿麦当劳，按每个人的偏好配餐，查询真实菜单和价格，再给出分人清单与分摊。"
 dependencies:

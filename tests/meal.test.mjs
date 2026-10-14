@@ -17,6 +17,17 @@ for (const mode of ['shared', 'budget']) {
       assert.equal(plan.people.reduce((sum, p) => sum + p.amount, 0), original.data.price);
       assert.equal(plan.quote.items.reduce((sum, p) => sum + p.subtotal, 0), original.data.price);
       assert.equal(plan.remaining + plan.total, 12000);
+      const request = await readExample(`quote-${plan.id}.input.json`);
+      const count = items => items.reduce((counts, item) => {
+        counts[item.code] = (counts[item.code] || 0) + item.quantity;
+        return counts;
+      }, {});
+      const pictured = [
+        ...plan.people.flatMap(p => [{ code: p.foodCode, quantity: 1 }, { code: p.drinkCode, quantity: 1 }]),
+        ...plan.sharedItems,
+      ];
+      const ordered = request.items.flatMap(p => p.roundList.flatMap(r => r.comboItemList.map(c => ({ code: c.code, quantity: c.quantity * p.quantity }))));
+      assert.deepEqual(count(pictured), count(ordered), 'pictured products and quantities match the quoted order');
       const text = shareText(plan);
       const svg = shareSvg(plan);
       for (const p of plan.people) {

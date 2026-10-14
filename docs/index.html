@@ -3,31 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="账算明白，拼单不烧心。麦麦拼单导演用官方 MCP 核价，让每个人知道吃什么、付多少。比较餐单、试试换堡、生成群分享卡。">
+  <meta name="description" content="账算明白，拼单不烧心。麦麦拼单用官方 MCP 核价，让每个人知道吃什么、付多少。比较餐单、试试换堡、生成群分享卡。">
   <meta name="theme-color" content="#f7f4eb">
-  <title>麦麦拼单导演 · 账算明白，拼单不烧心</title>
+  <title>麦麦拼单 · 账算明白，拼单不烧心</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <a href="#meal-table" class="skip">跳到餐单</a>
   <div class="shell">
     <header class="top">
-      <a class="brand" href="./" aria-label="麦麦拼单导演首页"><span class="brand-mark" aria-hidden="true">拼</span><span>麦麦拼单导演<small>MEAL DIRECTOR</small></span></a>
+      <a class="brand" href="./" aria-label="麦麦拼单首页"><span class="brand-mark" aria-hidden="true">拼</span><span>麦麦拼单<small>MEAL TOGETHER</small></span></a>
       <nav aria-label="项目导航"><a href="#composer">安排我的一餐</a><a href="https://github.com/lizheyong/mcd-meal-director">GitHub ↗</a></nav>
     </header>
     <main>
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span> 今日小剧场 · 四个人的点餐局</div><h1 id="hero-title">这顿拼单，<br><span>不烧心。</span><i aria-hidden="true">✳</i></h1><p>有人不吃辣，有人要无糖，有人临时想换堡。<br>谁吃什么、各付多少，导演替你安排明白。</p><a href="#meal-table" class="primary hero-action">看看这顿怎么拼 <span aria-hidden="true">↘</span></a><p class="hero-caption">一句话提需求 · 官方接口核价 · 餐单直接发群</p></div>
-        <div class="hero-art" aria-label="拼单小剧场插画">
-          <div class="table-grid" aria-hidden="true"></div>
-          <div class="speech speech-one">小周：老板，我临时想换个堡。</div>
-          <div class="scene-ticket"><div class="ticket-top"><span>DIRECTOR’S NOTE</span><b>01</b></div><div class="burger" aria-hidden="true"><div class="bun"><i></i><i></i><i></i></div><div class="lettuce"></div><div class="cheese"></div><div class="patty"></div><div class="bun-bottom"></div></div><strong>餐可以改，<br>账得重新算。</strong><div class="ticket-bottom"><span>4 位饭搭子</span><span>每一份都有着落</span></div></div>
-          <div class="speech speech-two">导演：加一块，谁换谁付。</div><div class="stamp" aria-hidden="true">账本<br>明白</div>
-        </div>
+        <div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span> 多人点餐 · 每一份都安排明白</div><h1 id="hero-title">这顿拼单，<br><span>不烧心。</span><i aria-hidden="true">✳</i></h1><p>有人不吃辣，有人要无糖，有人临时想换堡。<br>把每个人想吃的，拼成一份明白的餐单。</p><a href="#meal-table" class="primary hero-action">看看这顿怎么拼 <span aria-hidden="true">↘</span></a><p class="hero-caption">一句话提需求 · 官方接口核价 · 餐单直接发群</p></div>
+        <figure class="hero-food" aria-label="板烧鸡腿堡、薯条和可乐的官方商品图">
+          <img class="hero-fries" src="./assets/food/4810.png" alt="薯条" width="200" height="150">
+          <img class="hero-drink" src="./assets/food/3050.png" alt="可口可乐" width="200" height="200">
+          <img class="hero-burger" src="./assets/food/1406.png" alt="板烧鸡腿堡" width="427" height="320" fetchpriority="high">
+          <figcaption>想吃的，和大家一起拼。</figcaption>
+        </figure>
       </section>
       <div class="rule-line"><span>先把规矩立住</span><p>餐品有归属 <i>／</i> 花钱有依据 <i>／</i> 改餐有交代</p><a href="#meme-note">这个梗，我懂 ↗</a></div>
       <section id="meal-table" aria-labelledby="table-title">
-        <div class="section-head"><div><div class="eyebrow">01 / 选一桌</div><h2 id="table-title">一桌饭，两种安排。</h2></div><div class="snapshot-label">官方核价回放 · 2026.10.14<small>上海徐家汇餐厅 · 到店取餐</small></div></div>
+        <div class="section-head"><div><div class="eyebrow">01 / 选一桌</div><h2 id="table-title">选一份大家都满意的餐单。</h2></div><div class="snapshot-label">官方核价回放 · 2026.10.14<small>上海徐家汇餐厅 · 到店取餐</small></div></div>
         <p class="scene-brief">小林不吃辣，小周要无糖，小陈想吃鸡肉，小许想分小食。<strong>4 人，预算 ¥120。</strong></p>
         <div class="plan-options" aria-label="选择演示配餐方案">
           <button type="button" class="plan-option" id="choose-shared" aria-pressed="true"><span class="option-top"><span class="option-name"><i class="radio-dot"></i>共享多一点</span><span class="option-price">¥<b id="shared-price">100.30</b></span></span><span class="option-desc">4 堡 4 饮 · 麦乐鸡 10 块 + 中薯</span><span class="option-trade">保留巨无霸和板烧，大家一起分小食。</span></button>
@@ -38,8 +38,8 @@
           <section class="table-stage" aria-label="分人餐单">
             <div class="section-line"><h3>每个人，拿这一份</h3><span>每人 1 堡 + 1 饮 · 按约定分摊</span></div>
             <div class="people" id="people"></div>
-            <div class="shared-food"><div class="fries-icon" aria-hidden="true"><i></i><i></i><i></i><b>↔</b></div><div><strong>放中间，一起吃。</strong><p id="shared-food"></p><small>已包含在套餐里，采购计一次。</small></div></div>
-            <section class="change-scene" aria-label="临时改餐演示"><div class="scene-number">加映</div><div class="scene-dialogue"><p>小周：“我想换麦香鱼，无糖可乐保留。”</p><span id="change-caption">这就看看，临时改餐会动到谁的账。</span></div><button type="button" id="change-meal" aria-pressed="false">试试换堡 <span>+¥1.00</span></button></section>
+            <div class="shared-food"><div class="shared-photos" id="shared-photos"></div><div><strong>放中间，一起吃。</strong><p id="shared-food"></p><small>已包含在套餐里，采购计一次。</small></div></div>
+            <section class="change-scene" aria-label="临时改餐演示"><div class="scene-dialogue"><p>小周换麦香鱼，保留无糖可乐</p><span id="change-caption">换麦香鱼加 ¥1.00，由小周自己承担。</span></div><button type="button" id="change-meal" aria-pressed="false">试试换堡 <span>+¥1.00</span></button></section>
             <div class="change-ledger" id="change-ledger" hidden><span>小周 <b id="zhou-delta"></b></span><span>整单 <b id="total-delta"></b></span><p>无糖可乐照旧；另外三人的餐品与分摊保留。</p></div>
             <p class="tradeoff" id="tradeoff"></p>
           </section>
@@ -48,12 +48,12 @@
             <div class="tear-line"></div><p class="bill-label">向门店买这些</p><div id="shopping-list"></div><p class="bill-rule" id="split-rule"></p><p class="split-sum" id="split-sum" aria-label="分摊合计核对"></p><div class="tear-line"></div><div class="quote-proof"><span class="live-dot"></span><div>官方接口核价快照<small id="quote-time"></small></div><a id="response-link" href="https://github.com/lizheyong/mcd-meal-director/blob/main/examples/quote-before.result.json" aria-label="查看当前官方核价响应">查账 ↗</a></div><button type="button" id="open-share" class="primary">生成群餐单 <span aria-hidden="true">↗</span></button><p class="bill-footnote">演示人物 · 历史报价 · 未下单</p>
           </aside>
         </div>
-        <details class="source-note" id="about-demo"><summary>价格和餐单，有据可查。</summary><div><p>2026 年 10 月 14 日，使用麦当劳官方 MCP 查询上海徐家汇餐厅（天钥桥路 1 号）的到店菜单。四名成员与需求是演示案例；套餐选项和四份整单报价来自真实调用。</p><p>页面回放保存的结果。分摊是演示中约定的 AA 方案，个人换堡自付差价；不是官方商品单价。餐品供应和价格以实际下单时的官方结果为准。</p><a href="https://github.com/lizheyong/mcd-meal-director/blob/main/examples/live-run.md">查看请求参数、响应与完整过程 ↗</a></div></details>
+        <details class="source-note" id="about-demo"><summary>价格和餐单，有据可查。</summary><div><p>2026 年 10 月 14 日，使用麦当劳官方 MCP 查询上海徐家汇餐厅（天钥桥路 1 号）的到店菜单。四名成员与需求是演示案例；套餐选项和四份整单报价来自真实调用。</p><p>页面回放保存的结果。分摊是演示中约定的 AA 方案，个人换堡自付差价；不是官方商品单价。餐品供应和价格以实际下单时的官方结果为准。</p><p>餐品图片来自麦当劳官方菜单，展示对应商品；具体份量以餐单文字为准。<a href="https://github.com/lizheyong/mcd-meal-director/blob/main/docs/assets/food/sources.json">查看图片来源 ↗</a></p><a href="https://github.com/lizheyong/mcd-meal-director/blob/main/examples/live-run.md">查看请求参数、响应与完整过程 ↗</a></div></details>
       </section>
-      <section class="composer" id="composer" aria-labelledby="composer-title"><div class="composer-intro"><div class="eyebrow">02 / 轮到你来开场</div><h2 id="composer-title">你的饭搭子，<br>有什么想法？</h2><p>用自己的话说，不用逐项勾选。<br>把需求交给已接入 Skill 与麦当劳 MCP 的 AI 客户端，让它查询、配餐、核价。</p><a href="https://github.com/lizheyong/mcd-meal-director#快速开始codex-cli">安装 Skill 与连接说明 ↗</a></div><div class="composer-paper"><label for="meal-request">这一餐，听你说</label><textarea id="meal-request" aria-describedby="request-help" rows="5" placeholder="比如：我们五个人在杭州，一位不吃牛肉，预算 150 元，想分享小食……">我们四个人在上海徐家汇到店取餐，预算 120 元。小林不吃辣，小周要无糖饮料，小陈想吃鸡肉，小许想分享小食。基础餐费大家同意 AA，临时加价自己付。</textarea><div class="composer-actions"><small id="request-help" role="status">本页整理任务文本，复制后到 AI 客户端运行。</small><button type="button" class="primary" id="prepare-task">整理这段需求 ↗</button></div><div id="task-output" hidden><label for="task-text">复制到你的 AI 客户端</label><textarea readonly id="task-text" rows="8"></textarea><button type="button" id="copy-task" class="secondary">复制任务</button><span class="inline-status" id="task-status" role="status"></span></div></div></section>
-      <aside class="meme-note" id="meme-note"><span class="meme-tag">懂梗的，请入座。</span><h2>“先把规矩立住。”</h2><p>借红果 AI 短剧里“不烧心”的梗，给这顿拼单立个小规矩：<br><strong>一份餐归谁，一块钱花哪，都说清楚。</strong></p><small>这里的“不烧心”说的是拼单省心。<a href="https://www.36kr.com/p/4016896338120585">看看这个梗的来由 ↗</a></small></aside>
+      <section class="composer" id="composer" aria-labelledby="composer-title"><div class="composer-intro"><div class="eyebrow">02 / 写下你的需求</div><h2 id="composer-title">你的饭搭子，<br>有什么想法？</h2><p>用自己的话说，不用逐项勾选。<br>把需求交给已接入 Skill 与麦当劳 MCP 的 AI 客户端，让它查询、配餐、核价。</p><a href="https://github.com/lizheyong/mcd-meal-director#快速开始codex-cli">安装 Skill 与连接说明 ↗</a></div><div class="composer-paper"><label for="meal-request">这一餐，听你说</label><textarea id="meal-request" aria-describedby="request-help" rows="5" placeholder="比如：我们五个人在杭州，一位不吃牛肉，预算 150 元，想分享小食……">我们四个人在上海徐家汇到店取餐，预算 120 元。小林不吃辣，小周要无糖饮料，小陈想吃鸡肉，小许想分享小食。基础餐费大家同意 AA，临时加价自己付。</textarea><div class="composer-actions"><small id="request-help" role="status">本页整理任务文本，复制后到 AI 客户端运行。</small><button type="button" class="primary" id="prepare-task">整理这段需求 ↗</button></div><div id="task-output" hidden><label for="task-text">复制到你的 AI 客户端</label><textarea readonly id="task-text" rows="8"></textarea><button type="button" id="copy-task" class="secondary">复制任务</button><span class="inline-status" id="task-status" role="status"></span></div></div></section>
+      <aside class="meme-note" id="meme-note"><span class="meme-tag">拼单不烧心</span><h2>“先把规矩立住。”</h2><p>借红果 AI 短剧里“不烧心”的梗，给这顿拼单立个小规矩：<br><strong>一份餐归谁，一块钱花哪，都说清楚。</strong></p><small>这里的“不烧心”说的是拼单省心。<a href="https://www.36kr.com/p/4016896338120585">看看这个梗的来由 ↗</a></small></aside>
     </main>
-    <footer><span>麦麦拼单导演 · 独立参赛作品，非麦当劳官方产品。</span><div><a href="https://github.com/lizheyong/mcd-meal-director/blob/main/DESIGN_NOTES.md">设计参考</a><a href="https://github.com/M-China/mcd-developer-innovation-challenge/issues/689">已成功参赛 ↗</a></div></footer>
+    <footer><span>麦麦拼单 · 独立参赛作品，非麦当劳官方产品。</span><div><a href="https://github.com/lizheyong/mcd-meal-director/blob/main/DESIGN_NOTES.md">设计参考</a><a href="https://github.com/M-China/mcd-developer-innovation-challenge/issues/689">已成功参赛 ↗</a></div></footer>
   </div>
   <dialog id="share-dialog" aria-labelledby="share-title"><div class="dialog-head"><div><span class="eyebrow">这一桌，大家都有数。</span><h2 id="share-title">群餐单已备好。</h2></div><button type="button" id="close-share" class="close" aria-label="关闭分享餐单">×</button></div><div class="share-layout"><img id="share-preview" alt="当前演示方案的四人餐单分享卡"><div class="share-copy"><label for="share-text">发群前，先看一眼</label><textarea readonly id="share-text" rows="13"></textarea><div class="share-actions"><button type="button" class="primary" id="copy-share">复制餐单</button><button type="button" class="secondary" id="download-share">保存图片</button></div><p id="share-status" role="status">复制或保存后，可自行转发到群里。</p></div></div></dialog>
   <div class="sr-only" role="status" id="plan-status"></div>
