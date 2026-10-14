@@ -1,0 +1,54 @@
+{
+  "observedAt": "2026-10-14T09:24:23.491Z",
+  "server": "https://mcp.mcd.cn",
+  "tool": "calculate-price",
+  "redaction": "Removed request trace ID and duplicate text envelope; retained business response fields.",
+  "response": {
+    "success": true,
+    "code": 200,
+    "message": "请求成功",
+    "datetime": "2026-10-14 17:24:23",
+    "data": {
+      "productOriginalPrice": 10030,
+      "productPrice": 10030,
+      "originalPrice": 10030,
+      "discount": 0,
+      "price": 10030,
+      "productList": [
+        {
+          "productCode": "9900004066",
+          "productName": "堡堡随心拼（7件任选）",
+          "quantity": 1,
+          "originalSubtotal": 7250,
+          "subtotal": 7250
+        },
+        {
+          "productCode": "9900013304",
+          "productName": "人气经典随心配",
+          "quantity": 1,
+          "originalSubtotal": 1390,
+          "subtotal": 1390
+        },
+        {
+          "productCode": "9900015568",
+          "productName": "精选超值随心配",
+          "quantity": 1,
+          "originalSubtotal": 1390,
+          "subtotal": 1390
+        }
+      ],
+      "takeWayList": [
+        {
+          "code": "eat-in",
+          "title": "堂食",
+          "subtitle": "店内用餐"
+        },
+        {
+          "code": "locker-in",
+          "title": "外带",
+          "subtitle": "店内取餐柜"
+        }
+      ]
+    }
+  }
+}
